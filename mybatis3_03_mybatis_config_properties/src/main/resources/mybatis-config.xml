@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<properties resource="config.properties">
+		<property name="user:name" value="root" />
+		<property name="password" value="xymiao" />
+	</properties>
+
+	<environments default="dev">
+		<environment id="dev">
+			<transactionManager type="JDBC" />
+			<dataSource type="POOLED">
+				<property name="driver" value="${driver}" />
+				<property name="url" value="${url}" />
+				<property name="username" value="${user:name}" />
+				<property name="password" value="${password}" />
+			</dataSource>
+		</environment>
+	</environments>
+
+	<mappers>
+		<mapper resource="mapper/TUserMapper.xml" />
+		<!-- <mapper url="file:///G:\00_DevCode\Eclipse201912\mybatis3\mybatis3_01_introduction\src\main\resources\mapper\TUserMapper.xml" 
+			/> -->
+		<!-- 如果使用class的方式, 必须让xml的路径和接口路径一致. 否则会出现错误. -->
+		<!-- <mapper class="com.xymiao.mybatis3.mapper.TUserMapper" /> -->
+		<!-- 如果使用package name的方式, 必须让xml的路径和接口路径一致. 否则会出现错误. -->
+		<!--<package name="com.xymiao.mybatis3.mapper"/> -->
+	</mappers>
+</configuration>
