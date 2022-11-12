@@ -7,16 +7,6 @@
 		<property name="username" value="root" />
 		<property name="password" value="xymiao" />
 	</properties>
-
-	<typeAliases>
-		<typeAlias alias="TUser"
-			type="com.xymiao.mybatis3.pojo.TUser" />
-		<package name="com.xymiao.mybatis3.pojo" />
-	</typeAliases>
-
-	<typeHandlers>
-		<typeHandler handler="com.xymiao.mybatis3.typehandles.VarcharTypeHandler" />
-	</typeHandlers>
 	
 	<environments default="dev">
 		<environment id="dev">
